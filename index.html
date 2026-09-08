@@ -27,9 +27,9 @@
       --bg-color: #FAFAF7;
       --card-bg: #FFFFFF;
       --text-main: #1F1F1F;
-      --text-muted: #525252;
-      --border-color: #E5E5E0;
-      --manhattan-light: #FDF4EC;
+      --text-muted: #57534E;
+      --border-color: #E7E5E4;
+      --zoom-blue: #0E71EB;
       --radius: 16px;
     }
 
@@ -41,8 +41,8 @@
       background-color: var(--bg-color);
       color: var(--text-main);
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(255, 242, 0, 0.25) 0%, transparent 55%),
-        radial-gradient(circle at 50% 100%, rgba(242, 193, 147, 0.2) 0%, transparent 60%);
+        radial-gradient(circle at 50% 0%, rgba(242, 193, 147, 0.25) 0%, transparent 55%),
+        radial-gradient(circle at 50% 100%, rgba(31, 31, 31, 0.04) 0%, transparent 60%);
     }
 
     body {
@@ -50,7 +50,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 16px;
+      padding: 16px 16px;
       max-width: 440px;
       margin: 0 auto;
     }
@@ -65,18 +65,18 @@
     }
 
     .aol-brand-logo {
-      height: 42px;
+      height: 38px;
       width: auto;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--aol-dark);
       line-height: 1.2;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     /* Header Metadata Bar */
@@ -96,7 +96,7 @@
       font-weight: 700;
       color: var(--aol-dark);
       background: var(--aol-manhattan);
-      padding: 6px 12px;
+      padding: 5px 12px;
       border-radius: 99px;
       text-decoration: none;
       transition: opacity 0.15s ease;
@@ -121,7 +121,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       margin: auto 0;
     }
 
@@ -129,11 +129,11 @@
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: var(--radius);
-      padding: 18px 16px;
+      padding: 14px 14px;
       box-shadow: 0 8px 24px -6px rgba(31, 31, 31, 0.06);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .card-header {
@@ -144,12 +144,12 @@
 
     .card-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 800;
       color: var(--aol-dark);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .badge {
@@ -161,16 +161,17 @@
       color: var(--aol-dark);
     }
 
-    .badge.yellow {
-      background: var(--aol-yellow);
-    }
-
     .badge.manhattan {
       background: var(--aol-manhattan);
     }
 
+    .badge.blue {
+      background: #E0F2FE;
+      color: #0369A1;
+    }
+
     .card-desc {
-      font-size: 0.825rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       line-height: 1.35;
     }
@@ -180,13 +181,29 @@
       color: var(--aol-dark);
     }
 
+    /* Highlighted Password Callout - Soft Warm Honey Tint */
+    .password-notice {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 10px;
+      padding: 7px 10px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #92400E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-align: center;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       width: 100%;
-      height: 48px;
+      height: 46px;
       border-radius: 12px;
       font-family: 'Outfit', sans-serif;
       font-size: 0.95rem;
@@ -208,16 +225,15 @@
       box-shadow: 0 4px 14px rgba(31, 31, 31, 0.25);
     }
 
-    .btn-yellow {
-      background: var(--aol-yellow);
-      color: var(--aol-dark);
-      border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 4px 14px rgba(255, 242, 0, 0.4);
+    .btn-zoom {
+      background: var(--zoom-blue);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(14, 113, 235, 0.3);
     }
 
     .btn-icon {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       object-fit: contain;
     }
 
@@ -225,7 +241,7 @@
     footer {
       width: 100%;
       text-align: center;
-      font-size: 0.725rem;
+      font-size: 0.7rem;
       color: var(--text-muted);
     }
   </style>
@@ -284,14 +300,19 @@
         <span class="card-title">
           💻 Join Live Online
         </span>
-        <span class="badge yellow">Zoom Session</span>
+        <span class="badge blue">Zoom Session</span>
       </div>
 
       <div class="card-desc">
         Can't make it physically? Join the live interactive session online.
       </div>
 
-      <a href="https://zoom.us/j/placeholder" target="_blank" rel="noopener noreferrer" class="btn btn-yellow">
+      <!-- Highlighted Password Notice -->
+      <div class="password-notice">
+        🔑 Password will be public 10&ndash;15 mins before start time
+      </div>
+
+      <a href="https://zoom.us/j/placeholder" target="_blank" rel="noopener noreferrer" class="btn btn-zoom">
         <img src="./media/zoom.svg" alt="Zoom" class="btn-icon">
         Join Zoom Meeting
       </a>
