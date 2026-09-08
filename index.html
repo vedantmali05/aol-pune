@@ -65,14 +65,14 @@
     }
 
     .aol-brand-logo {
-      height: 38px;
+      height: 36px;
       width: auto;
       margin-bottom: 6px;
     }
 
     h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--aol-dark);
       line-height: 1.2;
@@ -121,7 +121,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       margin: auto 0;
     }
 
@@ -181,6 +181,31 @@
       color: var(--aol-dark);
     }
 
+    /* Muted Separator Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.725rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .divider span {
+      padding: 0 12px;
+      opacity: 0.5;
+    }
+
     /* Highlighted Password Callout - Soft Warm Honey Tint */
     .password-notice {
       background: #FFFBEB;
@@ -203,10 +228,10 @@
       justify-content: center;
       gap: 10px;
       width: 100%;
-      height: 46px;
+      height: 44px;
       border-radius: 12px;
       font-family: 'Outfit', sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.925rem;
       font-weight: 800;
       text-decoration: none;
       border: none;
@@ -292,6 +317,11 @@
         <img src="./media/google-maps.svg" alt="Google Maps" class="btn-icon">
         Open Google Maps
       </a>
+    </div>
+
+    <!-- MUTED SEPARATOR DIVIDER -->
+    <div class="divider">
+      <span>OR</span>
     </div>
 
     <!-- CHOICE 2: ZOOM MEETING -->
