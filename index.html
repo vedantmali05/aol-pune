@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Stress Management Workshop | The Art of Living</title>
+  
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Official Art of Living Brand Colors */
+      --aol-yellow: #FFF200;
+      --aol-manhattan: #F2C193;
+      --aol-dark: #1F1F1F;
+
+      /* UI Derived Tones */
+      --bg-color: #FAFAF7;
+      --card-bg: #FFFFFF;
+      --text-main: #1F1F1F;
+      --text-muted: #525252;
+      --border-color: #E5E5E0;
+      --manhattan-light: #FDF4EC;
+      --radius: 16px;
+    }
+
+    html, body {
+      height: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(255, 242, 0, 0.25) 0%, transparent 55%),
+        radial-gradient(circle at 50% 100%, rgba(242, 193, 147, 0.2) 0%, transparent 60%);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 16px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .aol-brand-logo {
+      height: 42px;
+      width: auto;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--aol-dark);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    /* Header Metadata Bar */
+    .meta-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--aol-dark);
+      background: var(--aol-manhattan);
+      padding: 6px 12px;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .meta-pill.helpline-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--aol-manhattan);
+    }
+
+    .meta-pill.helpline-pill:active {
+      opacity: 0.8;
+    }
+
+    .meta-icon {
+      color: var(--aol-dark);
+      flex-shrink: 0;
+    }
+
+    /* Core Options Container */
+    main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: auto 0;
+    }
+
+    .choice-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: 0 8px 24px -6px rgba(31, 31, 31, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--aol-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+      color: var(--aol-dark);
+    }
+
+    .badge.yellow {
+      background: var(--aol-yellow);
+    }
+
+    .badge.manhattan {
+      background: var(--aol-manhattan);
+    }
+
+    .card-desc {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .venue-address {
+      font-weight: 700;
+      color: var(--aol-dark);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      height: 48px;
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-dark {
+      background: var(--aol-dark);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(31, 31, 31, 0.25);
+    }
+
+    .btn-yellow {
+      background: var(--aol-yellow);
+      color: var(--aol-dark);
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 14px rgba(255, 242, 0, 0.4);
+    }
+
+    .btn-icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    /* Footer */
+    footer {
+      width: 100%;
+      text-align: center;
+      font-size: 0.725rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="./media/aol.svg" alt="The Art of Living" class="aol-brand-logo">
+    <h1>Stress Management Workshop</h1>
+    
+    <!-- Meta Strip with Vector SVG Icons -->
+    <div class="meta-strip">
+      <div class="meta-pill">
+        <svg class="meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Thu, 10 Sep &bull; 5:15 PM
+      </div>
+
+      <a href="tel:+919767133723" class="meta-pill helpline-pill">
+        <svg class="meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        +91 9767133723
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- CHOICE 1: GOOGLE MAPS -->
+    <div class="choice-card">
+      <div class="card-header">
+        <span class="card-title">
+          📍 Attend In-Person
+        </span>
+        <span class="badge manhattan">Pune Venue</span>
+      </div>
+
+      <div class="card-desc">
+        <div class="venue-address">Bungalow No 53, Rakshak Society</div>
+        Pimple Nilakh Rd, Opp. Aundh Military Station, Pune
+      </div>
+
+      <a href="https://maps.google.com/?q=Rakshak+Society+Pimple+Nilakh+Pune" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+        <img src="./media/google-maps.svg" alt="Google Maps" class="btn-icon">
+        Open Google Maps
+      </a>
+    </div>
+
+    <!-- CHOICE 2: ZOOM MEETING -->
+    <div class="choice-card">
+      <div class="card-header">
+        <span class="card-title">
+          💻 Join Live Online
+        </span>
+        <span class="badge yellow">Zoom Session</span>
+      </div>
+
+      <div class="card-desc">
+        Can't make it physically? Join the live interactive session online.
+      </div>
+
+      <a href="https://zoom.us/j/placeholder" target="_blank" rel="noopener noreferrer" class="btn btn-yellow">
+        <img src="./media/zoom.svg" alt="Zoom" class="btn-icon">
+        Join Zoom Meeting
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 The Art of Living
+  </footer>
+
+</body>
+</html>
