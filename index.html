@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>WhatsApp Message Repo | The Art of Living</title>
+  <title>WhatsApp Messages | The Art of Living</title>
   
   <!-- Preconnect & Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,6 @@
       --wa-green: #25D366;
       --wa-dark-green: #075E54;
       --wa-bg-light: #E7FCE9;
-      
       --radius: 16px;
     }
 
@@ -53,8 +52,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 16px 40px;
-      max-width: 480px;
+      padding: 20px 16px 40px;
+      max-width: 520px;
       margin: 0 auto;
     }
 
@@ -69,64 +68,38 @@
     }
 
     .aol-brand-logo {
-      height: 38px;
+      height: 36px;
       width: auto;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--aol-dark);
       line-height: 1.2;
       margin-bottom: 8px;
     }
 
-    .subtitle {
-      font-size: 0.825rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    /* Meta / Navigation Strip */
-    .meta-strip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .meta-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .meta-link {
       font-size: 0.775rem;
       font-weight: 700;
-      color: var(--aol-dark);
-      background: var(--aol-manhattan);
-      padding: 5px 12px;
-      border-radius: 99px;
+      color: var(--text-muted);
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 99px;
       transition: all 0.15s ease;
     }
 
-    .meta-pill.event-link {
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-    }
-
-    .meta-pill.event-link:hover, .meta-pill.event-link:active {
-      border-color: var(--aol-manhattan);
+    .meta-link:hover, .meta-link:active {
       color: var(--aol-dark);
-    }
-
-    .meta-icon {
-      color: currentColor;
-      flex-shrink: 0;
+      border-color: var(--aol-manhattan);
     }
 
     /* Main Container */
@@ -134,155 +107,105 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
 
-    /* Message Card */
+    /* Message Card with Top-Right Actions */
     .msg-card {
+      position: relative;
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: 0 8px 24px -6px rgba(31, 31, 31, 0.06);
+      padding: 14px;
+      box-shadow: 0 6px 20px -4px rgba(31, 31, 31, 0.06);
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
     .msg-card.copied-active {
       border-color: var(--wa-green);
-      transform: scale(1.01);
+      transform: scale(1.005);
     }
 
-    .card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .card-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--aol-dark);
+    /* Top Right Action Icon Buttons */
+    .card-actions-top {
+      position: absolute;
+      top: 22px;
+      right: 22px;
       display: flex;
       align-items: center;
       gap: 6px;
+      z-index: 10;
     }
 
-    .badge {
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 99px;
-      color: var(--aol-dark);
-      background: var(--aol-manhattan);
-    }
-
-    .badge.green {
-      background: var(--wa-bg-light);
-      color: var(--wa-dark-green);
-    }
-
-    /* WhatsApp Code Block Viewport */
-    .code-box-wrapper {
-      position: relative;
-    }
-
-    .code-box {
-      background-color: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 12px;
-      padding: 14px;
-      font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
-      font-size: 0.825rem;
-      line-height: 1.5;
-      color: #1E293B;
-      white-space: pre-wrap;
-      word-break: break-word;
-      user-select: all;
-      max-height: 220px;
-      overflow-y: auto;
-      scroll-behavior: smooth;
-    }
-
-    .code-box::-webkit-scrollbar {
-      width: 6px;
-    }
-    .code-box::-webkit-scrollbar-thumb {
-      background: #CBD5E1;
-      border-radius: 99px;
-    }
-
-    /* Card Footer & Action Bar */
-    .card-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn {
+    .btn-action-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      height: 44px;
-      border-radius: 12px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.925rem;
-      font-weight: 800;
-      text-decoration: none;
-      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: #FFFFFF;
+      color: var(--aol-dark);
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
       transition: all 0.2s ease;
-      flex: 1;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
 
-    .btn:active {
-      transform: scale(0.98);
+    .btn-action-icon:hover {
+      background: var(--bg-color);
+      border-color: var(--aol-manhattan);
+      transform: scale(1.06);
     }
 
-    .btn-copy {
-      background: var(--aol-dark);
-      color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(31, 31, 31, 0.2);
+    .btn-action-icon:active {
+      transform: scale(0.95);
     }
 
-    .btn-copy.copied {
+    .btn-copy-icon.copied {
       background: var(--wa-green) !important;
       color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35) !important;
+      border-color: var(--wa-green) !important;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3) !important;
     }
 
-    .btn-wa {
+    .btn-wa-icon {
       background: var(--wa-bg-light);
-      color: var(--wa-dark-green);
-      flex: 0 0 auto;
-      padding: 0 14px;
-      border: 1px solid rgba(37, 211, 102, 0.3);
+      border-color: rgba(37, 211, 102, 0.35);
     }
 
-    .btn-wa:hover, .btn-wa:active {
-      background: var(--wa-green);
-      color: #FFFFFF;
+    .btn-wa-icon:hover {
+      background: #D5F7D8;
     }
 
-    .btn-icon {
+    .svg-icon {
       width: 18px;
       height: 18px;
       flex-shrink: 0;
     }
 
-    .meta-info {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.725rem;
-      color: var(--text-muted);
-      padding: 0 4px;
+    .wa-icon-img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    /* Full height text box - fits width & height without scrolling */
+    .msg-text {
+      background-color: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 14px 90px 14px 14px; /* Right padding ensures clearance for top-right icon buttons */
+      font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #1E293B;
+      white-space: pre-wrap;
+      word-break: break-word;
+      user-select: all;
     }
 
     /* Floating Toast Notification */
@@ -326,11 +249,10 @@
       font-size: 0.75rem;
     }
 
-    /* Footer */
     footer {
       width: 100%;
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.725rem;
       color: var(--text-muted);
       margin-top: 28px;
     }
@@ -340,41 +262,30 @@
 
   <header>
     <img src="./media/aol.svg" alt="The Art of Living" class="aol-brand-logo">
-    <h1>Happiness Course Messages</h1>
-    <div class="subtitle">1-Click Copy Repository for WhatsApp Updates</div>
-    
-    <div class="meta-strip">
-      <div class="meta-pill">
-        <svg class="meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
-        3 Repeated Messages
-      </div>
-
-      <a href="./hybrid-event.html" class="meta-pill event-link">
-        <svg class="meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15 3 21 3 21 9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-        Hybrid Event Page
-      </a>
-    </div>
+    <h1>WhatsApp Messages</h1>
+    <a href="./hybrid-event.html" class="meta-link">
+      Hybrid Event Page ↗
+    </a>
   </header>
 
   <main>
 
-    <!-- MESSAGE CARD 1 -->
+    <!-- MESSAGE BLOCK 1 -->
     <div class="msg-card" id="card-1">
-      <div class="card-header">
-        <span class="card-title">
-          🌸 1. Welcome & Guidelines
-        </span>
-        <span class="badge">Onboarding</span>
+      <div class="card-actions-top">
+        <button class="btn-action-icon btn-copy-icon" onclick="copyMessage('msg-text-1', 'card-1', this)" title="Copy Message">
+          <svg class="svg-icon copy-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+
+        <button class="btn-action-icon btn-wa-icon" onclick="openInWhatsApp('msg-text-1')" title="Open in WhatsApp">
+          <img src="./media/whatsapp.svg" alt="WhatsApp" class="wa-icon-img">
+        </button>
       </div>
 
-      <div class="code-box-wrapper">
-        <pre class="code-box" id="msg-text-1">✨ *Welcome to The Art of Living HAPPINESS PROGRAM!* ✨
+      <pre class="msg-text" id="msg-text-1">✨ *Welcome to The Art of Living HAPPINESS PROGRAM!* ✨
 
 Jai Gurudev! 🙏
 
@@ -389,80 +300,46 @@ Just a few quick tips to make the most of these 4 days:
 - Don’t forget to bring your biggest smile! 😊
 
 See you there! 🌿✨</pre>
-      </div>
+    </div>
 
-      <div class="meta-info">
-        <span>Formatting: WhatsApp Markdown (*Bold*)</span>
-        <span>14 lines</span>
-      </div>
-
-      <div class="card-actions">
-        <button class="btn btn-copy" onclick="copyMessage('msg-text-1', 'card-1', this, 'Welcome & Guidelines')">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- MESSAGE BLOCK 2 -->
+    <div class="msg-card" id="card-2">
+      <div class="card-actions-top">
+        <button class="btn-action-icon btn-copy-icon" onclick="copyMessage('msg-text-2', 'card-2', this)" title="Copy Message">
+          <svg class="svg-icon copy-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
           </svg>
-          <span class="btn-label">Copy Message</span>
         </button>
 
-        <button class="btn btn-wa" onclick="openInWhatsApp('msg-text-1')" title="Share to WhatsApp">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-          </svg>
+        <button class="btn-action-icon btn-wa-icon" onclick="openInWhatsApp('msg-text-2')" title="Open in WhatsApp">
+          <img src="./media/whatsapp.svg" alt="WhatsApp" class="wa-icon-img">
         </button>
       </div>
-    </div>
 
-    <!-- MESSAGE CARD 2 -->
-    <div class="msg-card" id="card-2">
-      <div class="card-header">
-        <span class="card-title">
-          📍 2. Venue Details & Location
-        </span>
-        <span class="badge green">Location</span>
-      </div>
-
-      <div class="code-box-wrapper">
-        <pre class="code-box" id="msg-text-2">✨ *Venue Details:*
+      <pre class="msg-text" id="msg-text-2">✨ *Venue Details:*
 The Art of Living Happiness Center, 203, Vision Flora Mall, Kunal Icon Road, Pimple Saudagar, Pune.
 
 📍 *Google Maps Location:*
 https://maps.app.goo.gl/pp9VwuJ4fLsaXwVC8</pre>
-      </div>
+    </div>
 
-      <div class="meta-info">
-        <span>Formatting: WhatsApp Markdown (*Bold*)</span>
-        <span>5 lines</span>
-      </div>
-
-      <div class="card-actions">
-        <button class="btn btn-copy" onclick="copyMessage('msg-text-2', 'card-2', this, 'Venue Details')">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- MESSAGE BLOCK 3 -->
+    <div class="msg-card" id="card-3">
+      <div class="card-actions-top">
+        <button class="btn-action-icon btn-copy-icon" onclick="copyMessage('msg-text-3', 'card-3', this)" title="Copy Message">
+          <svg class="svg-icon copy-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
           </svg>
-          <span class="btn-label">Copy Message</span>
         </button>
 
-        <button class="btn btn-wa" onclick="openInWhatsApp('msg-text-2')" title="Share to WhatsApp">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-          </svg>
+        <button class="btn-action-icon btn-wa-icon" onclick="openInWhatsApp('msg-text-3')" title="Open in WhatsApp">
+          <img src="./media/whatsapp.svg" alt="WhatsApp" class="wa-icon-img">
         </button>
       </div>
-    </div>
 
-    <!-- MESSAGE CARD 3 -->
-    <div class="msg-card" id="card-3">
-      <div class="card-header">
-        <span class="card-title">
-          📝 3. Day 1 Homework
-        </span>
-        <span class="badge">Homework</span>
-      </div>
-
-      <div class="code-box-wrapper">
-        <pre class="code-box" id="msg-text-3">✨ *DAY 1 Homework* ✨
+      <pre class="msg-text" id="msg-text-3">✨ *DAY 1 Homework* ✨
 
 Jai Gurudev! 🙏
 
@@ -485,35 +362,13 @@ Jai Gurudev! 🙏
 - Strictly avoid smoking 🤒, alcohol 🍷, and tobacco
 
 See you all tomorrow! 🌸🧘‍♂️🌿</pre>
-      </div>
-
-      <div class="meta-info">
-        <span>Formatting: WhatsApp Markdown (*Bold*)</span>
-        <span>22 lines</span>
-      </div>
-
-      <div class="card-actions">
-        <button class="btn btn-copy" onclick="copyMessage('msg-text-3', 'card-3', this, 'Day 1 Homework')">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
-          <span class="btn-label">Copy Message</span>
-        </button>
-
-        <button class="btn btn-wa" onclick="openInWhatsApp('msg-text-3')" title="Share to WhatsApp">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-          </svg>
-        </button>
-      </div>
     </div>
 
   </main>
 
   <div id="toast">
     <div class="toast-icon">✓</div>
-    <span id="toast-text">Copied to clipboard!</span>
+    <span>Copied to clipboard!</span>
   </div>
 
   <footer>
@@ -521,26 +376,23 @@ See you all tomorrow! 🌸🧘‍♂️🌿</pre>
   </footer>
 
   <script>
-    function showToast(message) {
+    function showToast() {
       const toast = document.getElementById('toast');
-      const toastText = document.getElementById('toast-text');
-      toastText.textContent = message;
       toast.classList.add('show');
       
       clearTimeout(window.toastTimer);
       window.toastTimer = setTimeout(() => {
         toast.classList.remove('show');
-      }, 2500);
+      }, 2000);
     }
 
-    async function copyMessage(elementId, cardId, btnElement, title) {
+    async function copyMessage(elementId, cardId, btnElement) {
       const textToCopy = document.getElementById(elementId).innerText;
 
       try {
         if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(textToCopy);
         } else {
-          // Fallback method for older browsers or non-HTTPS contexts
           const textarea = document.createElement('textarea');
           textarea.value = textToCopy;
           textarea.style.position = 'fixed';
@@ -551,28 +403,32 @@ See you all tomorrow! 🌸🧘‍♂️🌿</pre>
           document.body.removeChild(textarea);
         }
 
-        // Visual feedback on card
+        // Card visual glow
         const card = document.getElementById(cardId);
         card.classList.add('copied-active');
-        setTimeout(() => card.classList.remove('copied-active'), 1500);
+        setTimeout(() => card.classList.remove('copied-active'), 1200);
 
-        // Visual feedback on button
-        const btnLabel = btnElement.querySelector('.btn-label');
-        const originalText = btnLabel.textContent;
+        // Icon button checkmark state
         btnElement.classList.add('copied');
-        btnLabel.textContent = '✓ Copied!';
+        btnElement.innerHTML = `
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>`;
 
         setTimeout(() => {
           btnElement.classList.remove('copied');
-          btnLabel.textContent = originalText;
-        }, 2000);
+          btnElement.innerHTML = `
+            <svg class="svg-icon copy-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>`;
+        }, 1800);
 
-        // Toast notification
-        showToast(`Copied "${title}" to clipboard!`);
+        // Toast feedback
+        showToast();
 
       } catch (err) {
         console.error('Failed to copy: ', err);
-        showToast('Failed to copy message');
       }
     }
 
